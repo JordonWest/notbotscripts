@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+
+from pynput.mouse import Button, Controller
+import time
+import random
+
+mouse = Controller()
+
+counter = 0
+trips = 0
+start_time = time.time()
+while True:
+    delay = random.randint(60, 120)
+    time.sleep(delay)
+    mouse.click(Button.left, 1)
+    time.sleep(delay)

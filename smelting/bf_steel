@@ -1,0 +1,109 @@
+#!/usr/bin/env python
+
+from pynput.mouse import Button, Controller
+import time
+import random
+
+mouse = Controller()
+
+#mouse.position = (1552, 152)
+
+counter = 0
+trips = 0
+start_time = time.time()
+while True:
+    delay = 0.6
+    # This new script assumes the bank is already open and inv is full of steel bars.
+    if counter == 0:
+        mouse.position = (random.randint(1592, 1604), random.randint(370, 377))
+        time.sleep(delay)
+        mouse.click(Button.left, 1)
+        time.sleep(delay)
+        mouse.position = (random.randint(987, 997), random.randint(177, 186))
+        time.sleep(delay)
+        mouse.click(Button.left, 1)
+        time.sleep(delay)
+    mouse.position = (random.randint(1550, 1560), random.randint(362, 373))
+    time.sleep(delay)
+    mouse.click(Button.left, 1)
+    time.sleep(delay)
+    mouse.position = (random.randint(980, 1002), random.randint(128, 148))
+    time.sleep(delay)
+    mouse.click(Button.left, 1)
+    time.sleep(delay)
+    mouse.position = (random.randint(1382, 1397), random.randint(55, 69))
+    time.sleep(delay)
+    mouse.click(Button.left, 1)
+    time.sleep(delay)
+    mouse.position = (random.randint(1503, 1523), random.randint(361, 377))
+    time.sleep(delay)
+    mouse.click(Button.left, 1)
+    time.sleep(delay)
+    mouse.position = (random.randint(1268, 1279), random.randint(380, 385)) #bank
+    time.sleep(delay)
+    mouse.click(Button.left, 1)
+    time.sleep(random.randint(1,2))
+    mouse.position = (random.randint(1030, 1050), random.randint(128, 148))
+    time.sleep(delay)
+    mouse.click(Button.left, 1)
+    time.sleep(delay)
+    mouse.position = (random.randint(1382, 1397), random.randint(55, 69))
+    time.sleep(delay)
+    mouse.click(Button.left, 1)
+    time.sleep(delay)
+    mouse.position = (random.randint(1179, 1188), random.randint(194, 199))
+    time.sleep(delay)
+    mouse.click(Button.left, 1)
+    time.sleep(1)
+    if counter == 0 or counter == 4 or counter == 8 or counter == 12:
+        mouse.position = (random.randint(1592, 1604), random.randint(370, 377))
+        time.sleep(1)
+        mouse.click(Button.left, 1)
+        time.sleep(5)
+        mouse.position = (random.randint(1286, 1296), random.randint(360, 369))
+        time.sleep(delay)
+        mouse.click(Button.left, 1)
+        time.sleep(delay)
+
+    else:
+        time.sleep(random.randint(6,7))
+    #------ DEPOSIT ONTO BELT
+    rightclickx = random.randint(1505, 1522)
+    rightclicky = random.randint(367, 378)
+    mouse.position = (rightclickx, rightclicky)
+    time.sleep(delay)
+    mouse.click(Button.right, 1)
+    time.sleep(delay)
+    mouse.position = (rightclickx, (rightclicky + 88))
+    time.sleep(delay)
+    mouse.click(Button.left, 1)    
+    time.sleep(delay)
+    mouse.position = (random.randint(1286, 1296), random.randint(360, 369))
+    time.sleep(delay)
+    mouse.click(Button.left, 1)    
+    time.sleep(delay)
+    mouse.position = (random.randint(1231, 1237), random.randint(447, 456))
+    time.sleep(2)
+    mouse.click(Button.left, 1)
+    time.sleep(random.randint(4,5))
+    mouse.position = (random.randint(1085, 1160), random.randint(581, 640))
+    time.sleep(delay)
+    mouse.click(Button.left, 1)
+    time.sleep(delay)
+    mouse.position = (random.randint(1460, 1473), random.randint(542, 552))
+    time.sleep(delay)
+    mouse.click(Button.left, 1)
+    time.sleep(random.randint(5,6))
+    if counter == 16:
+        counter = 0
+    else: 
+        counter += 1
+        trips += 1
+    if trips % 10 == 0:
+        print(f"{trips} have been performed...")
+    if trips % 20 == 0:
+        elapsed_time = time.time() - start_time
+        print(elapsed_time)
+        start_time = 0
+    # break
+

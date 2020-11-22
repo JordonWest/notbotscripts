@@ -1,0 +1,103 @@
+#!/usr/bin/env python
+from pynput.mouse import Button, Controller
+import time
+import random
+
+mouse = Controller()
+
+# run toggle
+#mouse.position = (2395, 175)
+
+
+#mouse.position = (2447, 175)
+
+
+def bank():
+#  return
+  mouse.position = (2500, 70)
+  time.sleep(1)
+  mouse.click(Button.left, 2)
+  time.sleep(11)
+  mouse.position = (2470, 70)
+  time.sleep(1)
+  mouse.click(Button.left, 2)
+  time.sleep(11)
+  mouse.position = (2455, 70)
+  time.sleep(1)
+  mouse.click(Button.left, 2)
+  time.sleep(11)
+  mouse.position = (2440, 75)
+  time.sleep(1)
+  mouse.click(Button.left, 2)
+  time.sleep(12)
+  mouse.position = (2410, 135)
+  time.sleep(1)
+  mouse.click(Button.left, 2)
+  time.sleep(12)
+  mouse.position = (2450, 155)
+  time.sleep(1)
+  mouse.click(Button.left, 2)
+  time.sleep(14)
+  mouse.position = (2050, 595)
+  time.sleep(1)
+  mouse.click(Button.left, 2)
+  time.sleep(4)
+  mouse.position = (2400, 375)
+  time.sleep(1)
+  mouse.click(Button.left, 2)
+  time.sleep(2)
+  mouse.position = (2395, 175)
+  time.sleep(1)
+  mouse.click(Button.left, 1)
+  time.sleep(1)
+  mouse.position = (2530, 90)
+  time.sleep(1)
+  mouse.click(Button.left, 2)
+  time.sleep(9)
+  mouse.position = (2525, 135)
+  time.sleep(1)
+  mouse.click(Button.left, 2)
+  time.sleep(9)
+  mouse.position = (2500, 195)
+  time.sleep(1)
+  mouse.click(Button.left, 2)
+  time.sleep(9)
+  mouse.position = (2487, 195)
+  time.sleep(1)
+  mouse.click(Button.left, 2)
+  time.sleep(9)
+  mouse.position = (2487, 195)
+  time.sleep(1)
+  mouse.click(Button.left, 2)
+  time.sleep(9)
+  mouse.position = (2447, 175)
+  time.sleep(1)
+  mouse.click(Button.left, 2)
+  time.sleep(9)
+  mouse.position = (2395, 175)
+  time.sleep(1)
+  mouse.click(Button.left, 2)
+  time.sleep(2)
+  return get_ore()
+
+
+def random_x_get():
+  return random.randint(2290, 2310)
+
+def random_y_get():
+  return random.randint(435, 450)
+
+def random_action_get():
+  return random.randint(80, 120)
+
+def get_ore():
+  count = random_action_get()
+  counter = 0
+  while counter < count:
+    wait = random.randint(1, 4)
+    mouse.position = (random_x_get(), random_y_get())
+    mouse.click(Button.left, 1)
+    time.sleep( wait )
+    counter += 1
+  return bank() 
+get_ore()

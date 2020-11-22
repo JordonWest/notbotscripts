@@ -1,0 +1,45 @@
+#!/usr/bin/env python
+
+from pynput.mouse import Button, Controller
+import time
+import random
+
+mouse = Controller()
+
+#mouse.position = (1552, 152)
+
+
+while True:
+ # break
+  time.sleep(random.randint(2,3))
+  mouse.position = (random.randint(1305, 1345), random.randint(310, 380))
+  time.sleep(random.randint(2,3))
+  mouse.click(Button.left, 1)
+  time.sleep(random.randint(2,3))
+  mouse.position = (random.randint(1505, 1525), random.randint(365, 380))
+  time.sleep(random.randint(2,3))
+  mouse.click(Button.left, 3)
+  time.sleep(random.randint(2,3))
+  mouse.position = (random.randint(990, 995), random.randint(140, 145))
+  time.sleep(random.randint(2,3))
+  mouse.click(Button.left, 3)
+  time.sleep(random.randint(2,3))
+  # move to furnace
+  mouse.position = (1643, 110)
+  time.sleep(random.randint(2,3))
+  mouse.click(Button.left, 1)
+  time.sleep(5)
+  mouse.position = (random.randint(1580, 1600), random.randint(360, 380))
+  time.sleep(random.randint(2,3))
+  mouse.click(Button.left, 3)
+  time.sleep(random.randint(2,3))
+  mouse.position = (random.randint(978, 981), random.randint(390, 395))
+  time.sleep(random.randint(2,3))
+  mouse.click(Button.left, 1)
+  time.sleep(8)
+  mouse.position = (1552, 152)
+  time.sleep(42)
+  mouse.click(Button.left, 1)
+  time.sleep(5)
+   
+

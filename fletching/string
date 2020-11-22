@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+
+from pynput.mouse import Button, Controller
+import time
+import random
+
+mouse = Controller()
+mouse.position = (random.randint(990, 995), random.randint(140, 145))
+while True:
+  break
+ #open bank
+  mouse.position = (random.randint(1280, 1300), random.randint(340, 360))
+  time.sleep(random.randint(1,2))
+  mouse.click(Button.left, 2)
+  time.sleep(random.randint(1,2))
+ #deposit bows
+  mouse.position = (random.randint(1340, 1345), random.randint(490, 495))
+  time.sleep(random.randint(1,2))
+  mouse.click(Button.left, 1)
+  time.sleep(random.randint(1,2))
+  mouse.position = (random.randint(990, 995), random.randint(140, 145))
+  time.sleep(random.randint(1,2))
+  mouse.click(Button.left, 1)
+  time.sleep(random.randint(1,2))
+  mouse.position = (random.randint(1040, 1045), random.randint(140, 145))
+  time.sleep(random.randint(1,2))
+  mouse.click(Button.left, 1)
+  time.sleep(random.randint(1,2))
+ #close bank
+  mouse.position = (random.randint(1385, 1395), random.randint(60, 70))
+  time.sleep(random.randint(1,2))
+  mouse.click(Button.left, 1)
+  time.sleep(random.randint(1,2))
+  mouse.position = (random.randint(1510, 1515), random.randint(370, 375))
+  time.sleep(random.randint(1,2))
+  mouse.click(Button.left, 1)
+  time.sleep(random.randint(1,2))
+  mouse.position = (random.randint(1510, 1515), random.randint(510, 515))
+  time.sleep(random.randint(1,2))
+  mouse.click(Button.left, 1)
+  time.sleep(random.randint(1,2))
+ #click on bow
+  mouse.position = (random.randint(1110, 1130), random.randint(585, 595))
+  time.sleep(random.randint(1,2))
+  mouse.click(Button.left, 1)
+  time.sleep(20)

@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+from pynput.mouse import Button, Controller
+import time
+import random
+
+mouse = Controller()
+
+
+
+while True:
+  time.sleep(4)
+  mouse.position = (random.randint(317, 425), random.randint(350, 430))  
+  time.sleep(1)
+  mouse.click(Button.left, 1)
+  time.sleep(4)
+  mouse.position = (random.randint(540, 650), random.randint(420, 500))  
+  time.sleep(1)
+  mouse.click(Button.left, 1)

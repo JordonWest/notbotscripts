@@ -1,0 +1,45 @@
+#!/usr/bin/env python
+
+from pynput.mouse import Button, Controller
+import time
+import random
+
+mouse = Controller()
+
+#mouse.position = (1210, 595)
+#time.sleep(2)
+#mouse.click(Button.left, 1)
+trips = 0
+while True:
+ #break
+ #open bank
+ mouse.position = (random.randint(1280, 1300), random.randint(340, 360))
+ time.sleep(1)
+ mouse.click(Button.left, 2)
+ time.sleep(random.randint(2,3))
+ #deposit bows
+ mouse.position = (random.randint(1560, 1565), random.randint(370, 375))
+ time.sleep(1)
+ mouse.click(Button.left, 1)
+ time.sleep(1)
+ mouse.position = (random.randint(990, 995), random.randint(140, 145))
+ time.sleep(1)
+ mouse.click(Button.left, 3)
+ time.sleep(1)
+ mouse.position = (random.randint(1385, 1395), random.randint(60, 70))
+ time.sleep(1)
+ mouse.click(Button.left, 1)
+ time.sleep(1)
+ mouse.position = (random.randint(1510, 1515), random.randint(370, 375))
+ time.sleep(1)
+ mouse.click(Button.left, 1)
+ time.sleep(1)
+ mouse.position = (random.randint(1560, 1565), random.randint(370, 375))
+ time.sleep(1)
+ mouse.click(Button.left, 1)
+ time.sleep(1)
+ #click on bow
+ mouse.position = (random.randint(1110, 1130), random.randint(585, 595))
+ time.sleep(1)
+ mouse.click(Button.left, 1)
+ time.sleep(48)

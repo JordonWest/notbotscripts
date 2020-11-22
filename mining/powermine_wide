@@ -1,0 +1,59 @@
+#!/usr/bin/env python
+
+from pynput.mouse import Button, Controller
+import time
+import random
+
+mouse = Controller()
+
+mouse.position = ((2395 + 40), (365))
+
+def random_x_mine():
+  return random.randint(2290, 2320)
+ 
+def random_y_mine():
+  return random.randint(445, 465)
+
+def random_x_drop():
+  return random.randint(2390 , 2405)
+
+def random_y_drop():
+  return random.randint(355, 370)
+
+def get_ore(x_coord, y_coord):
+  delay = 0.5
+  mine_delay = 2
+  mouse.position = (x_coord, y_coord -40)
+  time.sleep(delay)
+  mouse.click(Button.left, 2)
+  time.sleep( mine_delay )
+  mouse.position = ((x_coord - 250), (y_coord - 85))
+  time.sleep(delay)
+  mouse.click(Button.left, 1)
+  time.sleep(mine_delay)
+  return empty_ore(random_x_drop(), random_y_drop())
+
+def empty_ore(x_coord, y_coord):
+  delay = 0.5
+  mouse.position = (x_coord, y_coord)
+  time.sleep(delay)
+  mouse.click(Button.right, 1)
+  time.sleep(delay)
+  #menu click needs to be -20 and +35 respectively
+  mouse.position = ((x_coord - 20), (y_coord + 42))
+  time.sleep(delay)
+  mouse.click(Button.left, 1)
+  time.sleep(delay)
+  mouse.position = ((x_coord + 40), y_coord)
+  time.sleep(delay)
+  mouse.click(Button.right, 1)
+  time.sleep(delay)
+  mouse.position = ((x_coord + 20), (y_coord + 42))
+  time.sleep(delay)
+  mouse.click(Button.left, 1)
+  time.sleep(delay)
+
+
+  return get_ore(random_x_mine(), random_y_mine())
+empty_ore(random_x_drop(), random_y_drop()) 
+#get_ore(random_x_mine(), random_y_mine())
